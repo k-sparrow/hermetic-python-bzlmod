@@ -1,0 +1,4 @@
+/bazel-*
+.nvmlog*
+*.cfg
+/.idea*
