@@ -1,0 +1,18 @@
+# -------------------------------------
+# Copyright (c) 2023, Dror Kabely
+# -------------------------------------
+#
+
+# The names @pip and is a value that is a repository
+# name. This name is defined in the MODULES.bazel file.
+
+load("@rules_python//python:defs.bzl", "py_test")
+load("@pip//:requirements.bzl", "requirement")
+
+py_test(
+    name = "pytest_test_lib_test",
+    srcs = ["pytest_test_lib_test.py"],
+    deps = ["//src:pytest_test_lib", 
+            requirement("pytest")],
+    visibility = ["//visibility:public"]
+)
