@@ -2,3 +2,4 @@
 .nvmlog*
 *.cfg
 /.idea*
+MODULE.bazel.lock
