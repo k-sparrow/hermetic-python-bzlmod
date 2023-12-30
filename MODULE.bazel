@@ -43,7 +43,7 @@ pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
 # fetch 3rd party libraries
 pip.parse(
     hub_name = "pip",
-    python_version = PY_RULES_VERSION,
+    python_version = PY_VERSION,
     requirements_lock = "//:requirements_lock.txt",
 )
 

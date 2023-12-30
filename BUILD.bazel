@@ -9,6 +9,6 @@ load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
 
 compile_pip_requirements(
     name = "requirements",
-    src = "requirements.in",
+    src  = "requirements.in",
     requirements_txt = "requirements_lock.txt"
 )
