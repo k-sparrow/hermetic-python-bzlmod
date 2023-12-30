@@ -1,0 +1,14 @@
+# -------------------------------------
+# Copyright (c) 2023, Dror Kabely
+# -------------------------------------
+#
+
+load("@rules_python//python:pip.bzl", "compile_pip_requirements")
+load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+
+
+compile_pip_requirements(
+    name = "requirements",
+    src = "requirements.in",
+    requirements_txt = "requirements_lock.txt"
+)

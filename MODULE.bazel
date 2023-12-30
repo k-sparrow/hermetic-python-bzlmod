@@ -1,0 +1,50 @@
+# -------------------------------------
+# Copyright (c) 2023, Dror Kabely
+# -------------------------------------
+#
+
+# change the name of module at your leisure
+module(
+    name = "template_python_bzlmod",
+    version = "0.0.0",
+    compatibility_level = 1,
+)
+
+# load python bazel rules
+PY_RULES_VERSION = "0.27.1"
+PY_VERSION = "3.11"
+
+bazel_dep(name = "rules_python", version = PY_RULES_VERSION)
+
+# We next initialize the python toolchain using the extension.
+# You can set different Python versions in this block.
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    configure_coverage_tool = True,
+    # Only set when you have mulitple toolchain versions.
+    is_default = True,
+    python_version = PY_VERSION,
+)
+
+# You only need to load this repositories if you are using multiple Python versions.
+# I'm doing this for the sake of consistency with the original G repo
+use_repo(python, "python_3_11", "python_versions")
+
+
+# This extension allows a user to create modifications to how rules_python
+# creates different wheel repositories.  Different attributes allow the user
+# to modify the BUILD file, and copy files.
+# See @rules_python//python/extensions:whl_mods.bzl attributes for more information
+# on each of the attributes.
+# You are able to set a hub name, so that you can have different modifications of the same
+# wheel in different pip hubs.
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+
+# fetch 3rd party libraries
+pip.parse(
+    hub_name = "pip",
+    python_version = PY_RULES_VERSION,
+    requirements_lock = "//:requirements_lock.txt",
+)
+
+use_repo(pip, "pip")
