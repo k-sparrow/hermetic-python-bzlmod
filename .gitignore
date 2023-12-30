@@ -3,3 +3,4 @@
 *.cfg
 /.idea*
 MODULE.bazel.lock
+/.venv*
