@@ -4,9 +4,3 @@
 #
 
 load("@rules_python//python:defs.bzl", "py_binary", "py_library")
-
-py_library(
-    name = "pytest_test_lib",
-    srcs = ["pytest_test_lib.py"],
-    visibility = ["//visibility:public"]
-)
