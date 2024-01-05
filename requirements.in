@@ -14,9 +14,10 @@ torchvision==0.16.2
 torchaudio==2.1.2
 datasets==2.16.0
 transformers==4.36.2
+peft
 
 # misc
 matplotlib
 
 # testing
-pytest
+pytest==7.4.2

@@ -4,6 +4,10 @@
 #
 #    bazel run //:requirements.update
 #
+accelerate==0.25.0 \
+    --hash=sha256:c7bb817eb974bba0ff3ea1ba0f24d55afb86d50e3d4fe98d6922dc69cf2ccff1 \
+    --hash=sha256:ecf55b0ab278a1dac8539dde0d276977aff04683f07ede73eaf02478538576a1
+    # via peft
 aiohttp==3.9.1 \
     --hash=sha256:02ab6006ec3c3463b528374c4cdce86434e7b89ad355e7bf29e2f16b46c7dd6f \
     --hash=sha256:04fa38875e53eb7e354ece1607b1d2fdee2d175ea4e4d745f6ec9f751fe20c7c \
@@ -401,7 +405,9 @@ huggingface-hub==0.20.1 \
     --hash=sha256:8c88c4c3c8853e22f2dfb4d84c3d493f4e1af52fb3856a90e1eeddcf191ddbb1 \
     --hash=sha256:ecfdea395a8bc68cd160106c5bd857f7e010768d95f9e1862a779010cc304831
     # via
+    #   accelerate
     #   datasets
+    #   peft
     #   tokenizers
     #   transformers
 idna==3.6 \
@@ -758,10 +764,12 @@ numpy==1.26.2 \
     --hash=sha256:f79b231bf5c16b1f39c7f4875e1ded36abee1591e98742b05d8a0fb55d8a3eec \
     --hash=sha256:fe6b44fb8fcdf7eda4ef4461b97b3f63c466b27ab151bec2366db8b197387841
     # via
+    #   accelerate
     #   contourpy
     #   datasets
     #   matplotlib
     #   pandas
+    #   peft
     #   pyarrow
     #   torchvision
     #   transformers
@@ -822,9 +830,11 @@ packaging==23.2 \
     --hash=sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5 \
     --hash=sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7
     # via
+    #   accelerate
     #   datasets
     #   huggingface-hub
     #   matplotlib
+    #   peft
     #   pytest
     #   transformers
 pandas==2.1.4 \
@@ -854,6 +864,10 @@ pandas==2.1.4 \
     --hash=sha256:f69b0c9bb174a2342818d3e2778584e18c740d56857fc5cdb944ec8bbe4082cf \
     --hash=sha256:fcb68203c833cc735321512e13861358079a96c174a61f5116a1de89c58c0ef7
     # via datasets
+peft==0.7.1 \
+    --hash=sha256:a1b7dc222254ce2161b32b88cc6f2bd7387712d20c478c98c586c59112112e46 \
+    --hash=sha256:cd8fd190e1aacfdcb6c70df4e13c3e3b0006b1e9cc16ecf0a9804632edfcecd3
+    # via -r requirements.in
 pillow==10.1.0 \
     --hash=sha256:00f438bb841382b15d7deb9a05cc946ee0f2c352653c7aa659e75e592f6fa17d \
     --hash=sha256:0248f86b3ea061e67817c47ecbe82c23f9dd5d5226200eb9090b3873d3ca32de \
@@ -916,6 +930,26 @@ pluggy==1.3.0 \
     --hash=sha256:cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12 \
     --hash=sha256:d89c696a773f8bd377d18e5ecda92b7a3793cbe66c87060a6fb58c7b6e1061f7
     # via pytest
+psutil==5.9.7 \
+    --hash=sha256:032f4f2c909818c86cea4fe2cc407f1c0f0cde8e6c6d702b28b8ce0c0d143340 \
+    --hash=sha256:0bd41bf2d1463dfa535942b2a8f0e958acf6607ac0be52265ab31f7923bcd5e6 \
+    --hash=sha256:1132704b876e58d277168cd729d64750633d5ff0183acf5b3c986b8466cd0284 \
+    --hash=sha256:1d4bc4a0148fdd7fd8f38e0498639ae128e64538faa507df25a20f8f7fb2341c \
+    --hash=sha256:3c4747a3e2ead1589e647e64aad601981f01b68f9398ddf94d01e3dc0d1e57c7 \
+    --hash=sha256:3f02134e82cfb5d089fddf20bb2e03fd5cd52395321d1c8458a9e58500ff417c \
+    --hash=sha256:44969859757f4d8f2a9bd5b76eba8c3099a2c8cf3992ff62144061e39ba8568e \
+    --hash=sha256:4c03362e280d06bbbfcd52f29acd79c733e0af33d707c54255d21029b8b32ba6 \
+    --hash=sha256:5794944462509e49d4d458f4dbfb92c47539e7d8d15c796f141f474010084056 \
+    --hash=sha256:b27f8fdb190c8c03914f908a4555159327d7481dac2f01008d483137ef3311a9 \
+    --hash=sha256:c727ca5a9b2dd5193b8644b9f0c883d54f1248310023b5ad3e92036c5e2ada68 \
+    --hash=sha256:e469990e28f1ad738f65a42dcfc17adaed9d0f325d55047593cb9033a0ab63df \
+    --hash=sha256:ea36cc62e69a13ec52b2f625c27527f6e4479bca2b340b7a452af55b34fcbe2e \
+    --hash=sha256:f37f87e4d73b79e6c5e749440c3113b81d1ee7d26f21c19c47371ddea834f414 \
+    --hash=sha256:fe361f743cb3389b8efda21980d93eb55c1f1e3898269bc9a2a1d0bb7b1f6508 \
+    --hash=sha256:fe8b7f07948f1304497ce4f4684881250cd859b16d06a1dc4d7941eeb6233bfe
+    # via
+    #   accelerate
+    #   peft
 pyarrow==14.0.2 \
     --hash=sha256:059bd8f12a70519e46cd64e1ba40e97eae55e0cbe1695edd95384653d7626b23 \
     --hash=sha256:06ff1264fe4448e8d02073f5ce45a9f934c0f3db0a04460d0b01ff28befc3696 \
@@ -962,9 +996,9 @@ pyparsing==3.1.1 \
     --hash=sha256:32c7c0b711493c72ff18a981d24f28aaf9c1fb7ed5e9667c9e84e3db623bdbfb \
     --hash=sha256:ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db
     # via matplotlib
-pytest==7.4.3 \
-    --hash=sha256:0d009c083ea859a71b76adf7c1d502e4bc170b80a8ef002da5806527b9591fac \
-    --hash=sha256:d989d136982de4e3b29dabcc838ad581c64e8ed52c11fbe86ddebd9da0818cd5
+pytest==7.4.2 \
+    --hash=sha256:1d881c6124e08ff0a1bb75ba3ec0bfd8b5354a01c194ddd5a0a870a48d99b002 \
+    --hash=sha256:a766259cfab564a2ad52cb1aae1b881a75c3eb7e34ca3779697c23ed47c47069
     # via -r requirements.in
 python-dateutil==2.8.2 \
     --hash=sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86 \
@@ -1028,8 +1062,10 @@ pyyaml==6.0.1 \
     --hash=sha256:fd1592b3fdf65fff2ad0004b5e363300ef59ced41c2e6b3a99d4089fa8c5435d \
     --hash=sha256:fd66fc5d0da6d9815ba2cebeb4205f95818ff4b79c3ebe268e75d961704af52f
     # via
+    #   accelerate
     #   datasets
     #   huggingface-hub
+    #   peft
     #   transformers
 regex==2023.12.25 \
     --hash=sha256:0694219a1d54336fd0445ea382d49d36882415c0134ee1e8332afd1529f0baa5 \
@@ -1235,7 +1271,10 @@ safetensors==0.4.1 \
     --hash=sha256:f8934bdfd202ebd0697040a3dff40dd77bc4c5bbf3527ede0532f5e7fb4d970f \
     --hash=sha256:fdb4adb76e21bad318210310590de61c9f4adcef77ee49b4a234f9dc48867869 \
     --hash=sha256:fdb58dee173ef33634c3016c459d671ca12d11e6acf9db008261cbe58107e579
-    # via transformers
+    # via
+    #   accelerate
+    #   peft
+    #   transformers
 six==1.16.0 \
     --hash=sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926 \
     --hash=sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254
@@ -1371,6 +1410,8 @@ torch==2.1.2 \
     --hash=sha256:f9a55d55af02826ebfbadf4e9b682f0f27766bc33df8236b48d28d705587868f
     # via
     #   -r requirements.in
+    #   accelerate
+    #   peft
     #   torchaudio
     #   torchvision
 torchaudio==2.1.2 \
@@ -1423,11 +1464,14 @@ tqdm==4.66.1 \
     # via
     #   datasets
     #   huggingface-hub
+    #   peft
     #   transformers
 transformers==4.36.2 \
     --hash=sha256:462066c4f74ee52516f12890dcc9ec71d1a5e97998db621668455117a54330f6 \
     --hash=sha256:d8068e897e47793281501e547d2bbdfc5b8556409c2cb6c3d9e2ca77d4c0b4ec
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   peft
 triton==2.1.0 \
     --hash=sha256:143582ca31dd89cd982bd3bf53666bab1c7527d41e185f9e3d8a3051ce1b663b \
     --hash=sha256:21544e522c02005a626c8ad63d39bdff2f31d41069592919ef281e964ed26446 \
