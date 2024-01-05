@@ -5,3 +5,21 @@
 
 load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 load("@pip//:requirements.bzl", "requirement")
+
+load("//rules:ipython.bzl", "ipython", "jupyter")
+
+py_binary(
+    name = "main", 
+    srcs = ["main.py"],
+    deps = [requirement("torch")]
+)
+
+ipython(
+    name = "shell",
+    deps = [":main"]
+)
+
+jupyter(
+    name = "jupyter",
+    deps = [":main"]
+)

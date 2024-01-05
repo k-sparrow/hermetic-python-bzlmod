@@ -19,5 +19,11 @@ peft
 # misc
 matplotlib
 
+# interactive development
+ipython==8.19.0
+notebook==6.5.5
+jupyter==1.0.0
+traitlets==5.9.0
+
 # testing
 pytest==7.4.2
