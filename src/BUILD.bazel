@@ -8,18 +8,13 @@ load("@pip//:requirements.bzl", "requirement")
 
 load("//rules:ipython.bzl", "ipython", "jupyter")
 
-py_binary(
-    name = "main", 
-    srcs = ["main.py"],
-    deps = [requirement("torch")]
-)
 
 ipython(
     name = "shell",
-    deps = [":main"]
+    deps = []
 )
 
 jupyter(
     name = "jupyter",
-    deps = [":main"]
+    deps = []
 )
